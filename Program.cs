@@ -1,7 +1,5 @@
 ﻿
 
-using System.Collections.Specialized;
-
 string [] CreateArrayStr(int len)
 {  string [] listStr = new string[len];
     for (int i = 0; i < len; i++)
@@ -10,7 +8,7 @@ string [] CreateArrayStr(int len)
 }
 return listStr;
 }
-string [] listStr = CreateArrayStr(5);
+
 void PrintArray(string[] array)
 {
     for (int i = 0; i < array.Length; i++)
@@ -19,7 +17,7 @@ void PrintArray(string[] array)
     }
     System.Console.WriteLine();
 }
-PrintArray(listStr);
+
 int CountCharString(string str)
 {
   int counter = 0;
@@ -40,7 +38,7 @@ int CountWords(string[] listStr)
     }
     return counter2;
 }
-string [] CreateNewArrayStr(int len)
+string [] CreateNewArrayStr(int len, string[] listStr)
 {  string [] listNewStr = new string[len];
 int i = 0;
      foreach (string item in listStr)
@@ -54,5 +52,7 @@ int i = 0;
     }
 return listNewStr;
 }
-string[] newArrayString = CreateNewArrayStr(CountWords(listStr));
+string [] listStr = CreateArrayStr(5);
+PrintArray(listStr);
+string[] newArrayString = CreateNewArrayStr(CountWords(listStr), listStr);
 PrintArray(newArrayString);
