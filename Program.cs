@@ -1,12 +1,13 @@
 ﻿
 
-string [] CreateArrayStr(int len)
-{  string [] listStr = new string[len];
-    for (int i = 0; i < len; i++)
+string[] CreateArrayStr(int len)
 {
-    listStr[i] = Console.ReadLine();
-}
-return listStr;
+    string[] listStr = new string[len];
+    for (int i = 0; i < len; i++)
+    {
+        listStr[i] = Console.ReadLine();
+    }
+    return listStr;
 }
 
 void PrintArray(string[] array)
@@ -20,15 +21,16 @@ void PrintArray(string[] array)
 
 int CountCharString(string str)
 {
-  int counter = 0;
-  foreach (char item in str)
-  {
-      counter ++;
+    int counter = 0;
+    foreach (char item in str)
+    {
+        counter++;
     }
-return counter;
+    return counter;
 }
 int CountWords(string[] listStr)
-{  int counter2 = 0;
+{
+    int counter2 = 0;
     foreach (string item in listStr)
     {
         if (CountCharString(item) <= 3)
@@ -38,10 +40,11 @@ int CountWords(string[] listStr)
     }
     return counter2;
 }
-string [] CreateNewArrayStr(int len, string[] listStr)
-{  string [] listNewStr = new string[len];
-int i = 0;
-     foreach (string item in listStr)
+string[] CreateNewArrayStr(int len, string[] listStr)
+{
+    string[] listNewStr = new string[len];
+    int i = 0;
+    foreach (string item in listStr)
 
     {
         if (CountCharString(item) <= 3)
@@ -50,9 +53,9 @@ int i = 0;
             i++;
         }
     }
-return listNewStr;
+    return listNewStr;
 }
-string [] listStr = CreateArrayStr(5);
+string[] listStr = CreateArrayStr(5);
 PrintArray(listStr);
 string[] newArrayString = CreateNewArrayStr(CountWords(listStr), listStr);
 PrintArray(newArrayString);
